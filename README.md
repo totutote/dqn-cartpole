@@ -33,6 +33,11 @@ dqn-cartpole
    conda activate gymnasium
    ```
 
+3. ffmpegをインストールします（動画記録のために必要です）。
+   ```
+   brew install ffmpeg
+   ```
+
 ## 使用方法
 
 ### DQNエージェントの訓練
@@ -55,3 +60,4 @@ python src/run_model.py
 
 - このプロジェクトはPyTorchを使用して実装されています。
 - 環境の動作にはGymnasiumが必要です。
+- このプロジェクトはmacOS環境でのみ確認されています。

@@ -26,7 +26,7 @@ class DQNAgent:
         self.gamma = 0.95  # 割引率
         self.epsilon = 1.0  # 探索率
         self.epsilon_min = 0.01
-        self.epsilon_decay = 0.995
+        self.epsilon_decay = 0.999
         self.model = DQN(state_size, action_size).to(self.device)
         self.target_model = DQN(state_size, action_size).to(self.device)
         self.update_target_network()

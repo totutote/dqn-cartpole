@@ -1,6 +1,6 @@
 # dqn-cartpoleプロジェクト
 
-このプロジェクトは、OpenAIのGym環境であるCartPoleを使用して、DQN（Deep Q-Network）エージェントを訓練し、学習済みモデルを使用して環境を操作することを目的としています。
+このプロジェクトは、Gymnasium環境であるCartPoleを使用して、DQN（Deep Q-Network）エージェントを訓練し、学習済みモデルを使用して環境を操作することを目的としています。
 
 ## プロジェクト構成
 
@@ -10,7 +10,7 @@ dqn-cartpole
 │   ├── train.py        # DQNエージェントを訓練するためのエントリーポイント
 │   ├── run_model.py    # 学習済みのDQNモデルを使用して環境を操作
 │   └── model.py        # DQNエージェントのモデル定義
-├── requirements.txt     # 必要なPythonパッケージのリスト
+├── environment.yml      # Conda環境の設定ファイル
 └── README.md            # プロジェクトの概要と使用方法
 ```
 
@@ -25,6 +25,12 @@ dqn-cartpole
 2. 必要なパッケージをインストールします。
    ```
    pip install -r requirements.txt
+   ```
+
+   または、Conda環境を使用する場合は以下のコマンドを実行します。
+   ```
+   conda env create -f environment.yml
+   conda activate gymnasium
    ```
 
 ## 使用方法
@@ -48,4 +54,4 @@ python src/run_model.py
 ## 注意事項
 
 - このプロジェクトはPyTorchを使用して実装されています。
-- 環境の動作にはOpenAI Gymが必要です。
+- 環境の動作にはGymnasiumが必要です。

@@ -52,7 +52,7 @@ for episode in range(num_episodes):
         # エージェントの学習
         agent.replay(batch_size)
 
-    rewards.append(total_reward)  # エピソード終了時に報酬を記録
+    rewards.append(total_reward)
 
     print(f"Episode: {episode + 1}/{num_episodes}, Score: {total_reward:*>5}, Epsilon: {agent.epsilon:.4f}")
 
@@ -61,7 +61,7 @@ plt.plot(rewards)
 plt.xlabel('Episode')
 plt.ylabel('Total Reward')
 plt.title('Training Progress')
-plt.savefig('training_progress.png')  # グラフを保存
+plt.savefig('training_progress.png')
 plt.close()
 
 # モデルの保存

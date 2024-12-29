@@ -30,7 +30,7 @@ class DQNAgent:
         self.model = DQN(state_size, action_size).to(self.device)
         self.target_model = DQN(state_size, action_size).to(self.device)
         self.update_target_network()
-        self.update_target_every = 1000  # ターゲットネットワークを更新するステップ数
+        self.update_target_every = 1000
         self.step_count = 0
         self.optimizer = optim.Adam(self.model.parameters())
         self.criterion = nn.MSELoss()

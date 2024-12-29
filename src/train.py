@@ -5,22 +5,19 @@ import torch.nn as nn
 import torch.optim as optim
 from model import DQNAgent
 import matplotlib.pyplot as plt
-from gymnasium.wrappers import RecordVideo  # RecordVideoクラスをインポート
+from gymnasium.wrappers import RecordVideo
 
 # デバイスの設定
 device = torch.device("cpu")
 
 # 環境の初期化
-env = gym.make('CartPole-v1', render_mode='rgb_array')  # render_modeを設定
+env = gym.make('CartPole-v1', render_mode='rgb_array')
 env = RecordVideo(env, './video', episode_trigger=lambda episode_id: episode_id % 100 == 0)  # 100エピソードごとに動画を記録
-env._max_episode_steps = 1000  # 最大ステップ数を1000に設定
+env._max_episode_steps = 1000
 state_size = env.observation_space.shape[0]
 action_size = env.action_space.n
 num_episodes = 10000
 agent = DQNAgent(state_size=state_size, action_size=action_size, device=device)
-
-# ターゲットネットワークの更新頻度を設定
-agent.update_target_every = 1000  # 例として1000ステップごとに更新
 
 # バッチサイズの設定
 batch_size = 32

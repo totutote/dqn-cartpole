@@ -44,8 +44,7 @@ class DQNAgent:
     def act(self, state):
         if np.random.rand() <= self.epsilon:
             return random.randrange(self.action_size)
-        state = state.clone().detach().to(self.device)
-        state = state.unsqueeze(0)
+        state = state.clone().detach().to(self.device).unsqueeze(0)
         act_values = self.model(state)
         return torch.argmax(act_values[0]).item()
 

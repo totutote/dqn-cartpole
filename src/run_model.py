@@ -22,7 +22,7 @@ def run_model(model_path):
     # 学習済みモデルのロード
     state_size = env.observation_space.shape[0]
     action_size = env.action_space.n
-    model = DQN(state_size=state_size, action_size=action_size).to(device)
+    model = DQN(state_size=state_size, action_size=action_size, hidden_size=128).to(device)
     model.load_state_dict(torch.load(model_path, map_location=device, weights_only=True)) 
 
     done = False
